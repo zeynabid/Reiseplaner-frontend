@@ -1,15 +1,17 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="page">
+    <h1>Über uns</h1>
+    <p>Reiseplaner erstellt in der HTW.</p>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<script setup lang="ts">
+
+</script>
+
+<style scoped>
+.page {
+  padding: 2rem;
+  color: white;
 }
 </style>
