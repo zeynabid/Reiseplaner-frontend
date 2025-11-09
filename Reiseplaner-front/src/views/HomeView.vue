@@ -2,11 +2,25 @@
   <div class="home-page">
     <h1>Willkommen bei Trip`n</h1>
     <p>Plane deine nächste Reise</p>
+    <p>{{ backendMessage }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
 
+const backendMessage = ref('')
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:8080/api/hello')
+    backendMessage.value = response.data.message
+  } catch (error) {
+    console.error(error)
+    backendMessage.value = 'Fehler beim Laden der Nachricht'
+  }
+})
 </script>
 
 <style scoped>
